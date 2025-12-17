@@ -1,17 +1,37 @@
-🧬 3D In-Vitro Lead Intelligence Agent
+# 🧬 3D In-Vitro Lead Intelligence Agent  
 
-An AI-assisted decision intelligence pipeline that identifies, enriches, and prioritizes adoption-ready stakeholders for 3D in-vitro models used in toxicology and drug discovery.
+An **AI-assisted decision intelligence pipeline** designed to help life-science teams
+**identify who to engage, why they matter, and why now** in the 3D in-vitro ecosystem.
 The system combines scientific signals, business context, and ML-assisted ranking to help teams decide who to engage, why they matter, and why now.
 
-📊 Live Demo
+## 📊 Live Demo
 
 Interactive Streamlit dashboard demonstrating persona-driven lead identification and prioritization:
 
 👉 http://localhost:8501/
 
-🏛️ High-Level Architecture
+## 📄 Sample Output (Reference Run)
 
-The application follows an agent-style pipeline, orchestrated within the Streamlit app:
+To illustrate the system’s output, the repository includes a **sample result snapshot**
+generated using the following configuration:
+
+- **Role Persona:** Head of Preclinical Safety  
+- **Scientific Context:** Hepatic spheroids  
+
+The output represents a ranked list of adoption-ready stakeholders, enriched with
+scientific activity, funding context, fit classification, and recommended actions.
+
+👉 **Sample Output Sheet:** (https://drive.google.com/file/d/1z2qrYKwBa-_2fqLqPAdQF405BDNfLFGz/view?usp=sharing)
+
+> Note: This is a reference run provided for demonstration purposes.  
+> The live dashboard dynamically recomputes results based on selected personas
+> and scientific context.
+
+
+## 🏛️ High-Level Architecture
+
+The system is built as an **agent-style orchestration pipeline**, executed on-demand
+from a Streamlit interface and composed of clearly separated stages:
 
 User Inputs (Persona + Scientific Context)
         ↓
@@ -35,7 +55,7 @@ Ranked Dashboard Output
 
 The pipeline executes each time the user runs the Data Pipeline from the UI.
 
-🔄 Pipeline Stages
+## 🔄 Pipeline Stages
 Stage 1: Identification
 
 The agent identifies relevant professionals based on:
@@ -88,18 +108,18 @@ Monitor
 
 This ensures the output is actionable, not just ranked.
 
-🧠 Key Design Decisions & Problems Addressed
-1️⃣ Explainability over Black-Box ML
+## 🧠 Key Design Decisions & Problems Addressed
+**1️⃣ Explainability over Black-Box ML**
 
 Problem: Pure ML scoring is difficult for BD teams to trust.
 Solution: ML is used to assist ranking, while business rules clearly interpret outcomes into fit levels and actions.
 
-2️⃣ Compliance-Aware Data Strategy
+**2️⃣ Compliance-Aware Data Strategy**
 
 Problem: Scraping platforms like LinkedIn violates ToS and is unreliable.
 Solution: Proprietary sources are abstracted via mocked APIs, while PubMed is accessed through its official public API, preserving a production-ready architecture without compliance risk.
 
-3️⃣ Timing-Aware Lead Prioritization
+**3️⃣ Timing-Aware Lead Prioritization**
 
 Problem: Relevance alone does not indicate urgency or readiness.
 Solution: The system explicitly surfaces:
@@ -112,12 +132,12 @@ Decision-making seniority
 
 This aligns ranking with budget timing and adoption readiness.
 
-4️⃣ Persona-Driven Decision Context
+**4️⃣ Persona-Driven Decision Context**
 
 Problem: Different stakeholders prioritize different signals.
 Solution: The agent accepts persona and scientific context as first-class inputs, enabling scenario-specific prioritization.
 
-📈 Output & Usability
+## 📈 Output & Usability
 
 The final dashboard provides:
 
@@ -129,7 +149,7 @@ Export-ready structure for downstream workflows
 
 The system is designed to support real BD decision-making, not just data exploration.
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 Python
 
@@ -141,14 +161,14 @@ Pandas / NumPy – data processing
 
 Requests + XML parsing – PubMed API integration
 
-📂 Repository Structure
+## 📂 Repository Structure
 .
 ├── app.py              # Streamlit app & pipeline orchestration
 ├── data_sources.py     # Mock APIs + PubMed integration
 ├── requirements.txt
 └── README.md
 
-🔧 Local Setup
+## 🔧 Local Setup
 
 Clone the repository and create a virtual environment:
 
@@ -162,7 +182,7 @@ streamlit run app.py
 
 No API keys are required.
 
-📡 Compliance & Ethics
+## 📡 Compliance & Ethics
 
 No LinkedIn scraping
 
@@ -172,7 +192,7 @@ PubMed accessed via official public API
 
 Proprietary data abstracted responsibly
 
-🔮 Future Extensions
+## 🔮 Future Extensions
 
 Persistent storage for historical runs
 
@@ -182,6 +202,6 @@ Integration with licensed data providers
 
 Multi-persona weighting strategies
 
-✅ Summary
+## ✅ Summary
 
 This project demonstrates how AI-assisted decision intelligence can be applied to the 3D in-vitro and predictive toxicology domain, combining scientific relevance, business readiness, and explainable prioritization into a practical, production-minded tool.
