@@ -56,7 +56,7 @@ Ranked Dashboard Output
 The pipeline executes each time the user runs the Data Pipeline from the UI.
 
 ## 🔄 Pipeline Stages
-Stage 1: Identification
+# Stage 1: Identification
 
 The agent identifies relevant professionals based on:
 
@@ -70,7 +70,7 @@ Mocked professional network API (LinkedIn / Xing equivalent)
 
 Real PubMed (NCBI E-utilities) API for recent publications
 
-Stage 2: Enrichment
+# Stage 2: Enrichment
 
 Each identified profile is enriched with:
 
@@ -82,7 +82,7 @@ Geographic context (HQ vs remote, major biotech hubs)
 
 This layer converts raw profiles into commercially interpretable entities.
 
-Stage 3: Decision Intelligence & Ranking
+# Stage 3: Decision Intelligence & Ranking
 
 The enriched leads are passed through a decision intelligence engine that:
 
