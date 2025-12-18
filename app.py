@@ -6,7 +6,7 @@ import random
 from sklearn.ensemble import RandomForestClassifier
 import numpy as np
 # connecting our data_source.py
-from data_sources import linkedin_search_api, funding_intelligence_api
+from data_sources import linkedin_search_api, funding_intelligence_api, pubmed_author_api
 
 # basic page styling
 st.set_page_config(page_title="Bio-Tech Lead Gen Agent", page_icon="🧬", layout="wide")
@@ -207,4 +207,5 @@ if launch_btn:
 else:
     # Landing State (Instructions)
     st.markdown("### Waiting for Input...")
+
     st.write("Choose a target persona and scientific focus to activate the lead intelligence engine 🚀🧠")
