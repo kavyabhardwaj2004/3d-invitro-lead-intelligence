@@ -8,7 +8,7 @@ The system combines scientific signals, business context, and ML-assisted rankin
 
 Interactive Streamlit dashboard demonstrating persona-driven lead identification and prioritization:
 
-👉 http://localhost:8501/
+👉https://3d-invitro-lead-intelligence-atjxapp5fof7xy4bnzrdjcv.streamlit.app/
 
 ## 📄 Sample Output (Reference Run)
 
